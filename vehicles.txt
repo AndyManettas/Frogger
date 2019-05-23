@@ -1,0 +1,29 @@
+3, truck, 450, -2
+0, 175, 500
+
+2, racecarR, 500, 5
+0, 375
+
+3, car, 550, -2
+650, 450, 250
+
+3, tractor, 600, 2
+650, 400, 200
+
+4, racecarL, 650, -3
+700, 525, 350, 175
+
+
+public void Drown()
+        {   
+            // if the frog is in a river row... or maybe try if frog _positon.Y < 400. 
+            // The only benefit from getting the actual row might be to get its movingobject as well
+                // check if frogs x point is inside a moving object and check if frogs x+width point is within a moving object
+            foreach (MovingObject movingObj in _row.GetList)
+            {
+                if (!(_position.X > movingObj.X && _position.X+_width < movingObj.Width))
+                {
+                    Die(); // replace this with what it would mean for the frog to drown
+                }
+            }
+        }

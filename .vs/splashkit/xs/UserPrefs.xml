@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{71153FB5-945A-4A78-A237-587AFE5A5709}|Default">
+  <MonoDevelop.Ide.ItemProperties.splashkit PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Frogger.cs" Line="8" Column="6" />
+      <File FileName="Row.cs" Line="19" Column="41" />
+      <File FileName="MovingObject.cs" Line="55" Column="17" />
+      <File FileName="Frog.cs" Line="57" Column="10" />
+      <File FileName="Vehicle.cs" Line="8" Column="80" />
+      <File FileName="Platform.cs" Line="11" Column="1" />
+      <File FileName="Environment.cs" Line="50" Column="1" />
+      <File FileName="River.cs" Line="8" Column="88" />
+      <File FileName="Lane.cs" Line="15" Column="18" />
+      <File FileName="Program.cs" Line="37" Column="67" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="splashkit" expanded="True">
+            <Node name="splashkit" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
