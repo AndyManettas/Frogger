@@ -5,8 +5,9 @@ namespace splashkit
 {
     public class River : Row
     {
-        public River(Platform[] platform) : base(platform) { }
+        public River(Platform[] platform, double y) : base(platform, y) { }
 
+        // checks collision with frog and sticks frog to platform if so
         public override void CollisionCheck(Frog frog)
         {
             bool collided = false;
@@ -14,19 +15,17 @@ namespace splashkit
             {
                 if (SplashKit.BitmapCollision(movingObj.Bitmap, movingObj.Position, SplashKit.BitmapNamed("frog"), frog.Position))
                 {
-                    Console.WriteLine("collided");
                     collided = true;
                     frog.Stick(movingObj);
-                    if ((!collided) && frog.Position.Y <= 350 && frog.Position.Y >= 150)
-                    {
-                        Console.WriteLine("not collided");
-                        if (frog.Position.X + 25 < movingObj.X || frog.Position.X + 25 > movingObj.X + movingObj.Width)
-                        {
-                            SplashKit.SoundEffectNamed("splash").Play();
-                            frog.Respawn();
-                        }
-                    }
+                    // if frog has half his body over the platforms edge, collision is set to false
+                    collided &= (frog.X + 25 >= movingObj.X && frog.X + 25 <= movingObj.X + movingObj.Width);
                 }
+            }
+            // kills frog when frog is in the river and is not on a platform
+            if (!collided && frog.Y.Equals(Y))
+            {
+                SplashKit.SoundEffectNamed("splash").Play();
+                frog.Respawn();
             }
         }
     }

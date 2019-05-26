@@ -5,6 +5,6 @@ namespace splashkit
 {
     public class Vehicle : MovingObject
     {
-        public Vehicle(string bitmap, double x, double y, int polarity) : base(bitmap, x, y, polarity) { }
+        public Vehicle(string bitmap, double x, int polarity) : base(bitmap, x, polarity) { }
     }
 }

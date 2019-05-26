@@ -7,22 +7,27 @@ namespace splashkit
     {
         private Point2D _position;
         protected Bitmap _bitmap;
-        private int _polarity;
-        private int _width;
+        protected int _polarity;
+        protected int _width;
 
-        protected MovingObject(string bitmap, double x, double y, int polarity)
+        protected MovingObject(string bitmap, double x, int polarity)
         {
             _bitmap = SplashKit.BitmapNamed(bitmap);
             _position.X = x;
-            _position.Y = y;
+            _position.Y = 0;
             _polarity = polarity;
             _width = SplashKit.BitmapWidth(_bitmap);
         }
 
-        public void Run()
+        public void Draw()
         {
             SplashKit.DrawBitmap(_bitmap, X, Y);
+        }
 
+        // polarity determining objects' speed and direction
+        // (left if negative polarity and right if positive polarity)
+        public void Move()
+        {
             _position.X += _polarity;
 
             if (_polarity < 0)
@@ -40,6 +45,7 @@ namespace splashkit
                 }
             }
         }
+
 
         public double X
         {

@@ -1,24 +1,23 @@
 ﻿<Properties StartupConfiguration="{71153FB5-945A-4A78-A237-587AFE5A5709}|Default">
   <MonoDevelop.Ide.ItemProperties.splashkit PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="River.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="42" Column="80" />
-      <File FileName="Frogger.cs" Line="53" Column="25" />
-      <File FileName="Row.cs" Line="24" Column="14" />
-      <File FileName="MovingObject.cs" Line="16" Column="29" />
-      <File FileName="Frog.cs" Line="52" Column="10" />
-      <File FileName="Vehicle.cs" Line="8" Column="58" />
-      <File FileName="Platform.cs" Line="8" Column="94" />
-      <File FileName="Environment.cs" Line="13" Column="14" />
-      <File FileName="River.cs" Line="33" Column="1" />
-      <File FileName="Lane.cs" Line="15" Column="18" />
+      <File FileName="Program.cs" Line="24" Column="18" />
+      <File FileName="Frogger.cs" Line="1" Column="1" />
+      <File FileName="Row.cs" Line="23" Column="66" />
+      <File FileName="MovingObject.cs" Line="49" Column="1" />
+      <File FileName="Frog.cs" Line="9" Column="35" />
+      <File FileName="Vehicle.cs" Line="7" Column="6" />
+      <File FileName="Platform.cs" Line="6" Column="41" />
+      <File FileName="River.cs" Line="15" Column="14" />
+      <File FileName="Lane.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="splashkit" expanded="True">
             <Node name="splashkit" expanded="True">
-              <Node name="River.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

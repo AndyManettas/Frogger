@@ -1,14 +1,11 @@
 using splashkit;
 using SplashKitSDK;
-using System;
-using System.Threading;
 
 public class Program
 {
     public static void Main()
     {
         Frogger _game = new Frogger();
- 
         Window froggerWin = new Window("Frogger", 700, 800);
 
         while (!froggerWin.CloseRequested)
@@ -16,7 +13,6 @@ public class Program
             froggerWin.Clear(Color.White);
 
             _game.RunGame();
-
 
             if (!_game.Frog.Position.Y.Equals(100))
             {
@@ -43,6 +39,7 @@ public class Program
                 _game.PlayAgain();
             }
 
+            // sidebars
             SplashKit.FillRectangle(Color.Black, 0, 0, 25, 800);
             SplashKit.FillRectangle(Color.Black, 675, 0, 25, 800);
 

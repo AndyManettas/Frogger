@@ -6,17 +6,15 @@ namespace splashkit
     public class Frog
     {
         protected int _lives;
-        protected bool _aliveState;
         private Point2D _position;
-        private int _width;
+        protected Row _row;
 
         public Frog()
         {
             _lives = 3;
-            _aliveState = true;
+            _row = null;
             _position.X = 325;
             _position.Y = 700;
-            _width = 50;
         }
 
         public void Draw()
@@ -24,6 +22,7 @@ namespace splashkit
             SplashKit.DrawBitmap(SplashKit.BitmapNamed("frog"), _position.X, _position.Y);
         }
 
+        // frog hops according to key pressed (logic in the main)
         public void Hop (char direction)
         {
             SplashKit.SoundEffectNamed("hop").Play();
@@ -41,6 +40,7 @@ namespace splashkit
             }
         }
 
+        // frog dies and respawns
         public void Respawn ()
         {
             _position.X = 325;
@@ -48,9 +48,10 @@ namespace splashkit
             _lives -= 1;
         }
 
+        // frog sticks to the platforms
         public void Stick(MovingObject movingObj)
         {
-           _position.X += movingObj.Polarity; // make moving object polarity apply to the frogs x coordinate;
+           _position.X += movingObj.Polarity;
         }
 
         public int Lives
@@ -65,18 +66,6 @@ namespace splashkit
             }
         }
 
-        public bool AliveState
-        {
-            get
-            {
-                return _aliveState;
-            }
-            set
-            {
-                _aliveState = value;
-            }
-        }
-
         public Point2D Position
         {
             get
@@ -87,6 +76,10 @@ namespace splashkit
 
         public double Y
         {
+            get
+            {
+                return _position.Y;
+            }
             set
             {
                 _position.Y = value;
@@ -95,17 +88,25 @@ namespace splashkit
 
         public double X
         {
+            get
+            {
+                return _position.X;
+            }
             set
             {
                 _position.X = value;
             }
         }
 
-        public int Width
+        public Row Row
         {
             get
             {
-                return _width;
+                return _row;
+            }
+            set
+            {
+                _row = value;
             }
         }
     }
