@@ -8,7 +8,7 @@ public class Program
     public static void Main()
     {
         Frogger _game = new Frogger();
-
+ 
         Window froggerWin = new Window("Frogger", 700, 800);
 
         while (!froggerWin.CloseRequested)
@@ -17,20 +17,30 @@ public class Program
 
             _game.RunGame();
 
-            if (SplashKit.KeyTyped(KeyCode.UpKey)) {
-                _game.Frog.Hop('u');
-            }
-            if (SplashKit.KeyTyped(KeyCode.DownKey))
+
+            if (!_game.Frog.Position.Y.Equals(100))
             {
-                _game.Frog.Hop('d');
-            }
-            if (SplashKit.KeyTyped(KeyCode.LeftKey))
+                if (SplashKit.KeyTyped(KeyCode.UpKey))
+                {
+                    _game.Frog.Hop('u');
+                }
+                if (SplashKit.KeyTyped(KeyCode.DownKey))
+                {
+                    _game.Frog.Hop('d');
+                }
+                if (SplashKit.KeyTyped(KeyCode.LeftKey))
+                {
+                    _game.Frog.Hop('l');
+                }
+                if (SplashKit.KeyTyped(KeyCode.RightKey))
+                {
+                    _game.Frog.Hop('r');
+                }
+            } 
+            else
             {
-                _game.Frog.Hop('l');
-            }
-            if (SplashKit.KeyTyped(KeyCode.RightKey))
-            {
-                _game.Frog.Hop('r');
+                SplashKit.DrawBitmap(SplashKit.BitmapNamed("winner"), 45, 165);
+                _game.PlayAgain();
             }
 
             SplashKit.FillRectangle(Color.Black, 0, 0, 25, 800);

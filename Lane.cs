@@ -13,7 +13,8 @@ namespace splashkit
             {
                 if (SplashKit.BitmapCollision(movingObj.Bitmap, movingObj.Position, SplashKit.BitmapNamed("frog"), frog.Position))
                 {
-                    frog.Die();
+                    SplashKit.SoundEffectNamed("splat").Play();
+                    frog.Respawn();
                 }
             }
         }

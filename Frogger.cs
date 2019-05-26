@@ -24,12 +24,20 @@ namespace splashkit
             SplashKit.LoadBitmap("tractor", "tractor.png");
             SplashKit.LoadBitmap("racecarL", "racecarleft.png");
             SplashKit.LoadBitmap("gameover", "Gameover.png");
+            SplashKit.LoadBitmap("winner", "winner.png");
+            SplashKit.LoadBitmap("reset", "reset.png");
             SplashKit.LoadBitmap("turtle2", "turtle2.png");
             SplashKit.LoadBitmap("turtle3", "turtle3.png");
             SplashKit.LoadBitmap("turtleUW", "turtleunderwater.png");
             SplashKit.LoadBitmap("logM", "logmed.png");
             SplashKit.LoadBitmap("logL", "loglong.png");
             SplashKit.LoadBitmap("logS", "logsmall.png");
+            SplashKit.LoadSoundEffect("splat", "splat.wav");
+            SplashKit.LoadSoundEffect("splash", "splash.wav");
+            SplashKit.LoadSoundEffect("hop", "hop.wav");
+            SplashKit.LoadSoundEffect("win", "win.wav");
+            SplashKit.LoadMusic("traffic", "traffic.mp3");
+            SplashKit.MusicNamed("traffic").Play();
         }
 
         public Frogger()
@@ -42,16 +50,14 @@ namespace splashkit
         {
             _environment.Draw();
             RunObjectsInRow();
+            FrogState();
+        }
 
-            int x = 30;
-            int i = 0;
-
-            while (i < _frog.Lives)
+        public void FrogState()
+        {
+            for (int i = 0, x = 30; i < _frog.Lives; i++, x += 60)
             {
                 SplashKit.DrawBitmap(SplashKit.BitmapNamed("frogicon"), x, 755);
-
-                x += 60;
-                i++;
             }
 
             if (_frog.Lives > 0)
@@ -61,6 +67,7 @@ namespace splashkit
             else
             {
                 SplashKit.DrawBitmap(SplashKit.BitmapNamed("gameover"), 50, 75);
+                PlayAgain();
             }
         }
 
@@ -70,6 +77,25 @@ namespace splashkit
             {
                 row.RunObjects();
                 row.CollisionCheck(_frog);
+            }
+        }
+
+        public void PlayAgain()
+        {
+            Bitmap reset = SplashKit.BitmapNamed("reset");
+            SplashKit.DrawBitmap(reset, 240, 650);
+
+            if (SplashKit.MouseClicked(MouseButton.LeftButton))
+            {
+                if (SplashKit.MousePosition().X > 240 && SplashKit.MousePosition().X < 460)
+                {
+                    if (SplashKit.MousePosition().Y > 650 && SplashKit.MousePosition().Y < 750)
+                    {
+                        _frog.X = 325;
+                        _frog.Y = 700;
+                        _frog.Lives = 3;
+                    }
+                }
             }
         }
 

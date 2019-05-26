@@ -8,7 +8,7 @@ namespace splashkit
         protected int _lives;
         protected bool _aliveState;
         private Point2D _position;
-        private Row _row; // if frog is on river
+        private int _width;
 
         public Frog()
         {
@@ -16,6 +16,7 @@ namespace splashkit
             _aliveState = true;
             _position.X = 325;
             _position.Y = 700;
+            _width = 50;
         }
 
         public void Draw()
@@ -25,6 +26,8 @@ namespace splashkit
 
         public void Hop (char direction)
         {
+            SplashKit.SoundEffectNamed("hop").Play();
+
             switch (direction)
             {
                 case 'u': _position.Y -= 50;
@@ -38,7 +41,7 @@ namespace splashkit
             }
         }
 
-        public void Die ()
+        public void Respawn ()
         {
             _position.X = 325;
             _position.Y = 700;
@@ -50,16 +53,15 @@ namespace splashkit
            _position.X += movingObj.Polarity; // make moving object polarity apply to the frogs x coordinate;
         }
 
-        public void Drown()
-        {
-
-        }
-
         public int Lives
         {
             get
             {
                 return _lives;
+            }
+            set
+            {
+                _lives = value;
             }
         }
 
@@ -80,6 +82,30 @@ namespace splashkit
             get
             {
                 return _position;
+            }
+        }
+
+        public double Y
+        {
+            set
+            {
+                _position.Y = value;
+            }
+        }
+
+        public double X
+        {
+            set
+            {
+                _position.X = value;
+            }
+        }
+
+        public int Width
+        {
+            get
+            {
+                return _width;
             }
         }
     }
