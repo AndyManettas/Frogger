@@ -1,4 +1,0 @@
-pgrass,700
-pgrass,400
-grass,100
-grassedge,75

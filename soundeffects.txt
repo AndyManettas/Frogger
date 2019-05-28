@@ -1,4 +1,0 @@
-splat,splat.wav
-splash,splash.wav
-hop,hop.wav
-win,win.wav

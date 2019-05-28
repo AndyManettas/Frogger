@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{71153FB5-945A-4A78-A237-587AFE5A5709}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="frogger" expanded="True">
+            <Node name="frogger" expanded="True">
+              <Node name="Resources" expanded="True" />
+              <Node name="src" expanded="True">
+                <Node name="Program.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.frogger PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

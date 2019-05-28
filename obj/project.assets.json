@@ -682,9 +682,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/splashkit.csproj",
-      "projectName": "splashkit",
-      "projectPath": "/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/splashkit.csproj",
+      "projectUniqueName": "/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/frogger.csproj",
+      "projectName": "frogger",
+      "projectPath": "/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/frogger.csproj",
       "packagesPath": "/Users/andy/.nuget/packages/",
       "outputPath": "/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/",
       "projectStyle": "PackageReference",

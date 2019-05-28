@@ -1,0 +1,11 @@
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.csprojAssemblyReference.cache
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.csproj.CoreCompileInputs.cache
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.AssemblyInfoInputs.cache
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.AssemblyInfo.cs
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/bin/Debug/netcoreapp2.0/frogger.deps.json
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/bin/Debug/netcoreapp2.0/frogger.runtimeconfig.json
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/bin/Debug/netcoreapp2.0/frogger.runtimeconfig.dev.json
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/bin/Debug/netcoreapp2.0/frogger.dll
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/bin/Debug/netcoreapp2.0/frogger.pdb
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.dll
+/Users/andy/Documents/Uni/Semester_2/OOP/Week6/6.3D/splashkit/obj/Debug/netcoreapp2.0/frogger.pdb

@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{71153FB5-945A-4A78-A237-587AFE5A5709}|Default">
-  <MonoDevelop.Ide.ItemProperties.splashkit PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="splashkit" expanded="True">
-            <Node name="splashkit" expanded="True">
-              <Node name="frog.png" selected="True" />
-            </Node>
+          <Node name="splashkit" expanded="True" selected="True">
+            <Node name="splashkit" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -19,4 +16,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.frogger PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
