@@ -5,7 +5,7 @@ namespace splashkit
 {
     public class River : Row
     {
-        public River(Platform[] platform, double y) : base(platform, y) { }
+        public River(MovingObject[] movingObjArray, double y) : base(movingObjArray, y) { }
 
         // checks collision with frog and sticks frog to platform if so
         public override void CollisionCheck(Frog frog)

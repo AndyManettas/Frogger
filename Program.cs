@@ -7,6 +7,7 @@ public class Program
     {
         Frogger _game = new Frogger();
         Window froggerWin = new Window("Frogger", 700, 800);
+        int i = 1;
 
         while (!froggerWin.CloseRequested)
         {
@@ -35,6 +36,11 @@ public class Program
             } 
             else
             {
+                while (i == 1)
+                {
+                    SplashKit.SoundEffectNamed("win").Play();
+                    i = 2;
+                }
                 SplashKit.DrawBitmap(SplashKit.BitmapNamed("winner"), 45, 165);
                 _game.PlayAgain();
             }

@@ -10,10 +10,10 @@ namespace splashkit
         protected double _y;
 
         // moving objects get added to the rows list attribute
-        protected Row(MovingObject[] objects, double y)
+        protected Row(MovingObject[] objectArray, double y)
         {
             _y = y;
-            foreach (MovingObject obj in objects)
+            foreach (MovingObject obj in objectArray)
             {
                 obj.Y = y;
                 _movingObjects.Add(obj);
@@ -30,7 +30,7 @@ namespace splashkit
             }
         }
 
-        // abstract method checks for frog collision with row objects
+        // abstract method checks for frog collision with objects in row
         public abstract void CollisionCheck(Frog frog);
 
 

@@ -6,17 +6,16 @@ using System.Linq;
 
 namespace splashkit
 {
-    public class FileHandler
+    public static class FileHandler
     {
-
-        public List<Lane> Vehicles()
+        public static Dictionary<double, MovingObject[]> MovingObjectArrays()
         {
-            List<Lane> lanes = new List<Lane>();
+            Dictionary<double, MovingObject[]> movingObjArrayDict = new Dictionary<double, MovingObject[]>();
 
-            string filePath = @"vehicles.txt";
-            List<string> vehicleLines = File.ReadAllLines(filePath).ToList();
+            string filePath = @"movingObjects.txt";
+            List<string> fileLines = File.ReadAllLines(filePath).ToList();
 
-            foreach (string line in vehicleLines)
+            foreach (string line in fileLines)
             {
                 string[] entries = line.Split(',');
                 int arrayLength = int.Parse(entries[0]);
@@ -25,57 +24,22 @@ namespace splashkit
 
                 int i, k;
 
-                Vehicle[] vehicle = new Vehicle[arrayLength];
+                MovingObject[] movingObjArray = new MovingObject[arrayLength];
 
                 for (i = 0, k = 3; i < arrayLength; i++, k++)
                 {
-                    vehicle[i] = new Vehicle(name, int.Parse(entries[k]), polarity);
+                    movingObjArray[i] = new MovingObject(name, int.Parse(entries[k]), polarity);
                 }
 
                 double yCoord = int.Parse(entries[k]);
 
-                Lane lane = new Lane(vehicle, yCoord);
-
-                lanes.Add(lane);
+                movingObjArrayDict.Add(yCoord, movingObjArray);
             }
 
-            return lanes;
+            return movingObjArrayDict;
         }
 
-        public List<River> Platforms()
-        {
-            List<River> rivers = new List<River>();
-
-            string filePath = @"platforms.txt";
-            List<string> platformLines = File.ReadAllLines(filePath).ToList();
-
-            foreach (string line in platformLines)
-            {
-                string[] entries = line.Split(',');
-                int arrayLength = int.Parse(entries[0]);
-                string name = entries[1];
-                int polarity = int.Parse(entries[2]);
-
-                int i, k;
-
-                Platform[] platform = new Platform[arrayLength];
-
-                for (i = 0, k = 3; i < arrayLength; i++, k++)
-                {
-                    platform[i] = new Platform(name, int.Parse(entries[k]), polarity);
-                }
-
-                double yCoord = int.Parse(entries[k]);
-
-                River river = new River(platform, yCoord);
-
-                rivers.Add(river);
-            }
-
-            return rivers;
-        }
-
-        public void Environment()
+        public static void Environment()
         {
             SplashKit.FillRectangle(Color.Black, 25, 750, 650, 50);
             SplashKit.FillRectangle(Color.Black, 25, 450, 650, 250);
@@ -96,7 +60,7 @@ namespace splashkit
             }
         }
 
-        public void LoadBitmaps()
+        public static void LoadBitmaps()
         {
             string filePath = @"bitmaps.txt";
 
@@ -111,7 +75,7 @@ namespace splashkit
             }
         }
 
-        public void LoadSoundEffects()
+        public static void LoadSoundEffects()
         {
             string filePath = @"soundeffects.txt";
 

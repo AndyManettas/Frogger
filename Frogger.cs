@@ -1,34 +1,35 @@
 ﻿using SplashKitSDK;
+using System;
 using System.Collections.Generic;
 
 namespace splashkit
 {
     public class Frogger
     {
-        protected readonly Frog _frog = new Frog();
-        private readonly FileHandler _fileHandler = new FileHandler();
+        protected Frog _frog = new Frog();
         private readonly List<Row> _rows = new List<Row>();
-
-        // load resources into the game
-        private void LoadResources()
-        {
-            _fileHandler.LoadBitmaps();
-            _fileHandler.LoadSoundEffects();
-            SplashKit.LoadMusic("traffic", "traffic.mp3");
-            SplashKit.MusicNamed("traffic").Play();
-        }
 
         public Frogger()
         {
             LoadResources();
-            AddRows();
+            ReadMovingObjects();
+        }
+
+        // load resources into the game
+        private void LoadResources()
+        {
+            FileHandler.LoadBitmaps();
+            FileHandler.LoadSoundEffects();
+            SplashKit.LoadMusic("traffic", "traffic.mp3");
+            SplashKit.MusicNamed("traffic").Play();
         }
 
         // runs resources
         public void RunGame()
         {
-            _fileHandler.Environment();
+            FileHandler.Environment();
             RunObjectsInRow();
+            CollisionChecking();
             FrogState();
             foreach (Row row in _rows)
             {
@@ -66,6 +67,13 @@ namespace splashkit
             foreach (Row row in _rows)
             {
                 row.RunObjects();
+            }
+        }
+
+        public void CollisionChecking()
+        {
+            foreach (Row row in _rows)
+            {
                 row.CollisionCheck(_frog);
             }
         }
@@ -82,24 +90,19 @@ namespace splashkit
                 {
                     if (SplashKit.MousePosition().Y > 650 && SplashKit.MousePosition().Y < 750)
                     {
-                        _frog.X = 325;
-                        _frog.Y = 700;
-                        _frog.Lives = 3;
+                        _frog = new Frog();
                     }
                 }
             }
         }
 
-        // calls methods in file handler to read vehicles and platforms from files
-        public void AddRows()
+        // factory assembles dictionary into river or lane
+        public void ReadMovingObjects()
         {
-            foreach (Lane lane in _fileHandler.Vehicles())
+            foreach (KeyValuePair<double, MovingObject[]> movingObjArray in FileHandler.MovingObjectArrays())
             {
-                _rows.Add(lane);
-            }
-            foreach (River river in _fileHandler.Platforms())
-            {
-                _rows.Add(river);
+                Row row = RowFactory.GetRow(movingObjArray.Value, movingObjArray.Key);
+                _rows.Add(row);
             }
         }
 
@@ -108,6 +111,10 @@ namespace splashkit
             get
             {
                 return _frog;
+            }
+            set
+            {
+                _frog = value;
             }
         }
     }

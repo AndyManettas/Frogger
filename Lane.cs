@@ -5,7 +5,7 @@ namespace splashkit
 {
     public class Lane : Row
     {
-        public Lane(Vehicle[] vehicle, double y) : base(vehicle, y) { }
+        public Lane(MovingObject[] movingObjArray, double y) : base(movingObjArray, y) { }
 
         public override void CollisionCheck(Frog frog)
         {

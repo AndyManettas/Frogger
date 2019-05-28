@@ -3,14 +3,14 @@ using SplashKitSDK;
 
 namespace splashkit
 {
-    public abstract class MovingObject
+    public class MovingObject
     {
         private Point2D _position;
         protected Bitmap _bitmap;
         protected int _polarity;
         protected int _width;
 
-        protected MovingObject(string bitmap, double x, int polarity)
+        public MovingObject(string bitmap, double x, int polarity)
         {
             _bitmap = SplashKit.BitmapNamed(bitmap);
             _position.X = x;
