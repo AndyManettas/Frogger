@@ -18,9 +18,3 @@ Frogger game clone written in C# utilising OO Design
 
 ### Gameplay
 ![Screenshot](Resources/images/gameplay.png)
-
-### Win
-![Screenshot](Resources/images/you-win.png)
-
-### Gameover
-![Screenshot](Resources/images/game-over.png)
