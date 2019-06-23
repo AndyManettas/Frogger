@@ -11,4 +11,7 @@
   <ItemGroup>
     <Folder Include="src\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="$(SpaRoot)**" />
+  </ItemGroup>
 </Project>

@@ -6,9 +6,36 @@ using System.Linq;
 
 namespace frogger
 {
-    public static class FileHandler
+    public class FileHandler
     {
-        public static Dictionary<double, MovingObject[]> MovingObjectArrays()
+        private static readonly Lazy<FileHandler> _instance = new Lazy<FileHandler>(() => new FileHandler());
+
+        private FileHandler() { }
+
+        public static FileHandler Instance
+        {
+            get
+            {
+                return _instance.Value;
+            }
+        }
+
+        public void Menu()
+        {
+            string filePath = @"Resources/txtfiles/menu.txt";
+            List<string> menu = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in menu)
+            {
+                string[] entries = line.Split(',');
+                string name = entries[0];
+                int x = int.Parse(entries[1]);
+                int y = int.Parse(entries[2]);
+                SplashKit.DrawBitmap(SplashKit.BitmapNamed(name), x, y);
+            }
+        }
+
+        public Dictionary<double, MovingObject[]> MovingObjectArrays()
         {
             Dictionary<double, MovingObject[]> movingObjArrayDict = new Dictionary<double, MovingObject[]>();
 
@@ -20,7 +47,7 @@ namespace frogger
                 string[] entries = line.Split(',');
                 int arrayLength = int.Parse(entries[0]);
                 string name = entries[1];
-                int polarity = int.Parse(entries[2]);
+                int velocity = int.Parse(entries[2]);
 
                 int i, k;
 
@@ -28,7 +55,7 @@ namespace frogger
 
                 for (i = 0, k = 3; i < arrayLength; i++, k++)
                 {
-                    movingObjArray[i] = new MovingObject(name, int.Parse(entries[k]), polarity);
+                    movingObjArray[i] = new MovingObject(name, int.Parse(entries[k]), velocity);
                 }
 
                 double yCoord = int.Parse(entries[k]);
@@ -39,7 +66,7 @@ namespace frogger
             return movingObjArrayDict;
         }
 
-        public static void Environment()
+        public void Environment()
         {
             SplashKit.FillRectangle(Color.Black, 25, 750, 650, 50);
             SplashKit.FillRectangle(Color.Black, 25, 450, 650, 250);
@@ -60,7 +87,7 @@ namespace frogger
             }
         }
 
-        public static void LoadBitmaps()
+        public void LoadBitmaps()
         {
             string filePath = @"Resources/txtfiles/bitmaps.txt";
 
@@ -75,7 +102,7 @@ namespace frogger
             }
         }
 
-        public static void LoadSoundEffects()
+        public void LoadSoundEffects()
         {
             string filePath = @"Resources/txtfiles/soundeffects.txt";
 

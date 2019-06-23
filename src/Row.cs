@@ -25,6 +25,7 @@ namespace frogger
         {
             foreach (MovingObject movingObj in _movingObjects)
             {
+                movingObj.Surface();
                 movingObj.Draw();
                 movingObj.Move();
             }
@@ -36,18 +37,12 @@ namespace frogger
 
         public List<MovingObject> GetList
         {
-            get
-            {
-                return _movingObjects;
-            }
+            get { return _movingObjects; }
         }
 
         public double Y
         {
-            get
-            {
-                return _y;
-            }
+            get { return _y; }
         }
     }
 }

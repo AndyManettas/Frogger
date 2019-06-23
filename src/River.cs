@@ -13,19 +13,21 @@ namespace frogger
             bool collided = false;
             foreach (MovingObject movingObj in GetList)
             {
-                if (SplashKit.BitmapCollision(movingObj.Bitmap, movingObj.Position, SplashKit.BitmapNamed("frog"), frog.Position))
+                if (movingObj.State is AboveWaterState)
                 {
-                    collided = true;
-                    frog.Stick(movingObj);
-                    // if frog has half his body over the platforms edge, collision is set to false
-                    collided &= (frog.X + 25 >= movingObj.X && frog.X + 25 <= movingObj.X + movingObj.Width);
+                    if (SplashKit.BitmapCollision(movingObj.Bitmap, movingObj.Position, SplashKit.BitmapNamed("frog"), frog.Position))
+                    {
+                        collided = true;
+                        frog.Stick(movingObj);
+                        // if frog has half his body over the platforms edge, collision is set to false
+                        collided &= frog.X + 25 >= movingObj.X && frog.X + 25 <= movingObj.X + movingObj.Width;
+                    }
                 }
             }
             // kills frog when frog is in the river and is not on a platform
-            if (!collided && frog.Y.Equals(Y))
+            if (!collided && frog.Y.Equals(_y))
             {
-                SplashKit.SoundEffectNamed("splash").Play();
-                frog.Respawn();
+                frog.Splash();
             }
         }
     }

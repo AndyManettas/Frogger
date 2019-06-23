@@ -14,7 +14,11 @@ winner,winner.png
 reset,reset.png
 turtle2,turtle2.png
 turtle3,turtle3.png
-turtleUW,turtleunderwater.png
+turtleUW2,turtleuw2.png
+turtleUW3,turtleuw3.png
 logM,logmed.png
 logL,loglong.png
 logS,logsmall.png
+menu,menu.png
+playbutton,playbutton.png
+quitbutton,quitbutton.png

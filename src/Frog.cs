@@ -40,6 +40,18 @@ namespace frogger
             }
         }
 
+        public void Splat()
+        {
+            SplashKit.SoundEffectNamed("splat").Play();
+            Respawn();
+        }
+
+        public void Splash()
+        {
+            SplashKit.SoundEffectNamed("splash").Play();
+            Respawn();
+        }
+
         // frog dies and respawns
         public void Respawn ()
         {
@@ -51,63 +63,36 @@ namespace frogger
         // frog sticks to the platforms
         public void Stick(MovingObject movingObj)
         {
-           _position.X += movingObj.Polarity;
+           _position.X += movingObj.Velocity;
         }
 
         public int Lives
         {
-            get
-            {
-                return _lives;
-            }
-            set
-            {
-                _lives = value;
-            }
+            get { return _lives; }
+            set { _lives = value; }
         }
 
         public Point2D Position
         {
-            get
-            {
-                return _position;
-            }
+            get { return _position; }
         }
 
         public double Y
         {
-            get
-            {
-                return _position.Y;
-            }
-            set
-            {
-                _position.Y = value;
-            }
+            get { return _position.Y; }
+            set { _position.Y = value; }
         }
 
         public double X
         {
-            get
-            {
-                return _position.X;
-            }
-            set
-            {
-                _position.X = value;
-            }
+            get { return _position.X; }
+            set { _position.X = value; }
         }
 
         public Row Row
         {
-            get
-            {
-                return _row;
-            }
-            set
-            {
-                _row = value;
-            }
+            get { return _row; }
+            set { _row = value; }
         }
     }
 }
