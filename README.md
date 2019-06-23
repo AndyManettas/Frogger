@@ -7,17 +7,20 @@ Frogger game clone written in C# utilising OO Design
 
 ## Screenshots
 
-- UML
-![Screenshot](img/search.png)
+- UML Diagram
+![Screenshot](Resources/images/uml-diagram.png)
+
+- Sequence Diagram
+![Screenshot](Resources/images/sequence-diagram.png)
 
 - Menu
-![Screenshot](img/search.png)
+![Screenshot](Resources/images/main-menu.png)
 
 - Gameplay
-![Screenshot](img/result.png)
+![Screenshot](Resources/images/gameplay.png)
 
 - Win
-![Screenshot](img/result.png)
+![Screenshot](Resources/images/you-win.png)
 
 - Gameover
-![Screenshot](img/result.png)
+![Screenshot](Resources/images/game-over.png)
